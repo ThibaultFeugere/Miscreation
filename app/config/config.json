@@ -1,0 +1,28 @@
+{
+  "development": {
+    "username": "root",
+    "password": "sys",
+    "database": "miscreation",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "dialectOptions": {
+      "timezone": "Etc/GMT0"
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "sys",
+    "database": "miscreation",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": "sys",
+    "database": "miscreation",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "operatorsAliases": false
+  }
+}
