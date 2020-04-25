@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    {{#distortion}}
+    <title>{{title}}</title>
+    {{/distortion}}
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        {{#distortion}}
+        <h1 class="text-center text-uppercase">{{ title }}</h1>
+        <div class="alert alert-info text-center">
+            <img src="{{ image }}" style="height: 200px">
+            <small>
+                <p><i>Découvert par {{ finder }} en {{ release_date }}</i></p>
+            </small>
+            <p>{{ description }}</p>
+        </div>
+        {{/distortion}}
+    </div>
+</body>
