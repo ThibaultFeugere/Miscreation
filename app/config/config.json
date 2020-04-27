@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "sys",
+    "password": "root",
     "database": "miscreation",
     "host": "127.0.0.1",
     "dialect": "mariadb",
