@@ -4,5 +4,11 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer {
+  position: fixed;
+  margin-top: 50px;
 }

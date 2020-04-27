@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./stylesheets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="script.js"></script>
 </head>
@@ -15,19 +15,22 @@
     <div class="row">
       {{#distortions}}
       <div class="col-3">
-        <a href="distortion/{{ id }}">
-          <div class="card">
-            <img src="{{ image }}" style="height: 200px">
-            <div class="card-body">
-              <div class="card-title text-uppercase">{{ title }}</div>
-              <p>{{ description }}</p>
-            </div>
-            <div class="card-footer">
-              <p>Découvert par {{ finder }} en {{ release_date }}</p>
-            </div>
+        <div class="card" style="height: 500px">
+          <img src="{{ image }}" style="height: 150px;">
+          {{!-- <div class="card-header"> --}}
+          {{!-- </div> --}}
+          <div class="card-body text-wrap text-truncate mb-3">
+            <a href="distortion/{{ id }}">
+              <div class="btn btn-info">Voir plus -></div>
+            </a>
+            <div class="card-title text-uppercase font-weight-bold">{{ title }}</div>
+            <p>{{ description }}</p>
           </div>
+          <div class="card-footer">
+            <p>Découvert par {{ finder }} en {{ release_date }}</p>
+          </div>
+        </div>
       </div>
-      </a>
       {{/distortions}}
     </div>
   </div>
