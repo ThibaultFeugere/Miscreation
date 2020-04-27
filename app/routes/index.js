@@ -22,6 +22,8 @@ router.get('/distortion/:id', function (req, res, next) {
     });
 });
 
+router.get('')
+
 /* Route /status */
 router.get("/status", function (req, res) {
   res.send("OK !");
