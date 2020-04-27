@@ -13,27 +13,4 @@ router.get('/', function (req, res, next) {
     });
 });
 
-router.get('/distortion/:id', function (req, res, next) {
-  models.Distortion.findByPk(req.params.id)
-    .then(function (Distortion) {
-      res.render('show', {
-        distortion: Distortion
-      });
-    });
-});
-
-router.get('')
-
-/* Route /status */
-router.get("/status", function (req, res) {
-  res.send("OK !");
-});
-
-/* Route /index */
-router.get("/test", function (req, res) {
-  res.render('index', {
-    title: 'PLOP NOOB'
-  })
-})
-
 module.exports = router;

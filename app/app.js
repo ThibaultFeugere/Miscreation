@@ -5,8 +5,10 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sequelize = require('sequelize');
 
+// Importations des routes
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const distortionRouter = require('./routes/distortion');
+const usersRouter = require('./routes/user');
 
 const app = express();
 
@@ -24,9 +26,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static("public"));
 
 app.use('/', indexRouter);
+app.use('/distortion', distortionRouter)
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
