@@ -2,8 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 /* GET users listing. */
-router.get('/users', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/showall/', function(req, res, next) {
+  models.User.findAll()
+    .then(function (Distortion) {
+      res.render('user/index', {
+        distortion: Distortion
+      });
+    });
 });
 
 module.exports = router;
