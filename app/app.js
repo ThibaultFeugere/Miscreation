@@ -15,7 +15,7 @@ const app = express();
 const PORT = 1337;
 
 app.listen(PORT, () => {
-  console.log("Express Node.js server running on port 1337.")
+  console.log("Express Node.js server running on port " + PORT)
 })
 
 // view engine setup
