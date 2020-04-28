@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ yes }}</title>
+    <link type="text/css" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center text-uppercase">{{ yes }}</h1>
+        <form action="distortion/create" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Entrez un titre" name="title">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Décrivez la déformation" name="description">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Date de découverte (année)" name="release_date">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Image" name="image">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Auteur de la découverte" name="finder">
+            </div>
+            <button class="btn btn-success" type="submit">Valider</button>
+        </form>
+    </div>
+</body>
+
+</html>
