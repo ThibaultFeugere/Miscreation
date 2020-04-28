@@ -11,6 +11,11 @@ router.get('/show/:id', function (req, res, next) {
     });
 });
 
+router.get('/api/show/:id', function (req, res, next) {
+  models.Distortion.findByPk(req.params.id)
+    .then( (result) => res.json(result))
+});
+
 router.get('/create', function (req, res, next) {
     res.render('distortion/create');
 });
