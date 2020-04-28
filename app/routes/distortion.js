@@ -16,6 +16,15 @@ router.get('/api/show/:id', function (req, res, next) {
     .then( (result) => res.json(result))
 });
 
+router.delete('/api/:id', function (req, res, next) {
+  models.Distortion.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then((result) => res.json(result))
+});
+
 router.get('/create', function (req, res, next) {
     res.render('distortion/create');
 });
