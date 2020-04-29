@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models').User
 
 /* GET users listing. */
 router.get('/showall/', function(req, res, next) {
-  models.User.findAll()
-    .then(function (Distortion) {
+  User.findAll()
+    .then(function (Users) {
       res.render('user/index', {
-        distortion: Distortion
+        users: Users
       });
     });
 });

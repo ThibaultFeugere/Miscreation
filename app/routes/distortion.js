@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const models = require('../models')
+const bodyParser = require('body-parser').json();
+const Distortion = require('../models').Distortion
 
 /* GUI PART */
 
 router.get('/distortion/show/:id', function (req, res, next) {
-  models.Distortion.findByPk(req.params.id)
+  Distortion.findByPk(req.params.id)
     .then(function (Distortion) {
       res.render('distortion/show', {
         distortion: Distortion
@@ -14,7 +15,7 @@ router.get('/distortion/show/:id', function (req, res, next) {
 });
 
 router.get('/create', function (req, res, next) {
-  models.Distortion.insertOne(title, description, image, release_date, image, finder)
+  Distortion.insertOne(title, description, image, release_date, image, finder)
   // .then(function (Distortion) {
   res.render('distortion/create', {
     yes: 'Création',
@@ -29,18 +30,22 @@ router.get('/create', function (req, res, next) {
 
 /* API PART */
 
-router.get('/api/distortion/show/:id', function (req, res, next) {
-  models.Distortion.findByPk(req.params.id)
+router.get('/api/distortion/show/', function (req, res) {
+  Distortion.findAll()
     .then((result) => res.json(result))
+    .catch(err => res.json(err));
 });
 
-router.get('/api/distortion/showall/', function (req, res, next) {
-  models.Distortion.findAll()
+router.get('/api/distortion/show/:id', function (req, res) {
+  Distortion.findByPk(req.params.id)
     .then((result) => res.json(result))
+    .catch(err => res.json(err));
 });
 
-router.post('/api/distortion', function (req, res, next) {
-  models.Distortion.create({
+router.post('/api/distortion/create', bodyParser, function (req, res) {
+  console.log(req.headers);
+  console.log(req.body);
+  Distortion.create({
       title: req.body.title,
       description: req.body.description,
       release_date: req.body.release_date,
@@ -48,15 +53,17 @@ router.post('/api/distortion', function (req, res, next) {
       finder: req.body.finder
     })
     .then((result) => res.json(result))
+    .catch(err => res.json(err));
 })
 
-router.delete('/api/distortion/:id', function (req, res, next) {
-  models.Distortion.destroy({
+router.delete('/api/distortion/:id', function (req, res) {
+  Distortion.destroy({
       where: {
         id: req.params.id
       }
     })
     .then((result) => res.json(result))
+    .catch(err => res.json(err));
 });
 
 module.exports = router;
