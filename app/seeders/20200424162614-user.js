@@ -7,7 +7,14 @@ module.exports = {
       email: 'maxime.larrieu@ynov.com',
       createdAt: new Date(),
       updatedAt: new Date()
-    }]);
+    },
+    {
+      name: 'Thibault',
+      email: 'thibault.feugere@ynov.com',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+  ]);
   },
 
   down: (queryInterface, Sequelize) => {
