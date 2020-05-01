@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Modifier un utilisateur</title>
+    <link type="text/css" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <h1 class="d-inline-block align-top text-center text-uppercase">Miscreate</h1>
+                </a>
+                <div>
+                    <button class="btn btn-light" type="submit">Se connecter</button>
+                    <button class="btn btn-light" type="submit">S'enregistrer</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    {{#user}}
+    <div class="container mt-3">
+        <h1 class="text-center text-uppercase">Modification d'un utilisateur</h1>
+        <form action="/user/update/{{id}}" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Entrez un nom" value="{{ name }}" name="name">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Entrez une adresse email" value="{{ email }}"
+                    name="email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" placeholder="Définissez un mot de passe"
+                    value="{{ password }}" name=" password ">
+            </div>
+            <button class="btn btn-success" type="submit">Modifier</button>
+        </form>
+    </div>
+    {{/user}}
+</body>
+
+</html>
