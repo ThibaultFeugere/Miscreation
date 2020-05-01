@@ -2,14 +2,14 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <title>Création d'une distortion</title>
-    <link type="text/css" rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Création d'une malformation</title>
+  <link type="text/css" rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header>
+  <header>
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/">
@@ -22,27 +22,27 @@
       </div>
     </nav>
   </header>
-    <div class="container mt-3">
-        <h1 class="text-center text-uppercase">Création d'une distortion</h1>
-        <form action="/distortion/create" method="POST">
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Entrez un titre" name="title">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Décrivez la déformation" name="description">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="number" placeholder="Date de découverte (année)" name="release_date">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="url" placeholder="Image" name="image">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Auteur de la découverte" name="finder">
-            </div>
-            <button class="btn btn-success" type="submit">Valider</button>
-        </form>
-    </div>
+  <div class="container mt-3">
+    <h1 class="text-center text-uppercase">Création d'une malformation</h1>
+    <form action="/distortion/create" method="POST">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Entrez un titre" name="title">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Décrivez la déformation" name="description">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="number" placeholder="Date de découverte (année)" name="release_date">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="url" placeholder="Image" name="image">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Auteur de la découverte" name="finder">
+      </div>
+      <button class="btn btn-success" type="submit">Valider</button>
+    </form>
+  </div>
 </body>
 
 </html>
