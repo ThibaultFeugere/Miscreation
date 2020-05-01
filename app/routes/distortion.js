@@ -21,15 +21,15 @@ router.get('/distortion/create', function (req, res) {
 
 router.post('/distortion/create', function (req, res) {
   Distortion.create({
-    title: req.body.title,
-    description: req.body.description,
-    release_date: req.body.release_date,
-    image: req.body.image,
-    finder: req.body.finder
-  })
-  .then(function (distortions) {
-    res.redirect('/');
-  });
+      title: req.body.title,
+      description: req.body.description,
+      release_date: req.body.release_date,
+      image: req.body.image,
+      finder: req.body.finder
+    })
+    .then(function (distortions) {
+      res.redirect('/');
+    });
 });
 
 router.get('/distortion/edit/:id', function (req, res, next) {
@@ -41,23 +41,22 @@ router.get('/distortion/edit/:id', function (req, res, next) {
     });
 });
 
-router.post('/distortion/update/:id', function(req, res) {
+router.post('/distortion/update/:id', function (req, res) {
   Distortion.update({
-    title: req.body.title,
-    description: req.body.description,
-    release_date: req.body.release_date,
-    image: req.body.image,
-    finder: req.body.finder
-  },
-  {
-    where: {
-      id: req.params.id
-    }
-  })
-  .then(function (distortions) {
-    res.redirect('/distortion/show/' + req.params.id);
-  });
-})
+      title: req.body.title,
+      description: req.body.description,
+      release_date: req.body.release_date,
+      image: req.body.image,
+      finder: req.body.finder
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function (distortions) {
+      res.redirect('/distortion/show/' + req.params.id);
+    });
+});
 
 router.get('/distortion/delete/:id', function (req, res) {
   Distortion.destroy({
@@ -94,7 +93,7 @@ router.post('/api/distortion/create', function (req, res) {
     })
     .then((result) => res.json(result))
     .catch(err => res.json(err));
-})
+});
 
 router.put('/api/distortion/update/:id', function (req, res) {
   Distortion.update({
@@ -103,15 +102,14 @@ router.put('/api/distortion/update/:id', function (req, res) {
       release_date: req.body.release_date,
       image: req.body.image,
       finder: req.body.finder
-    },
-    {
+    }, {
       where: {
         id: req.params.id
       }
     })
     .then((result) => res.json(result))
     .catch(err => res.json(err));
-})
+});
 
 router.delete('/api/distortion/delete/:id', function (req, res) {
   Distortion.destroy({
