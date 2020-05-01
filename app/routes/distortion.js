@@ -5,7 +5,7 @@ const Distortion = require('../models').Distortion
 
 /* GUI PART */
 
-router.get('/distortion/show/:id', function (req, res, next) {
+router.get('/distortion/show/:id', function (req, res) {
   Distortion.findByPk(req.params.id)
     .then(function (Distortion) {
       res.render('distortion/show', {
@@ -14,19 +14,38 @@ router.get('/distortion/show/:id', function (req, res, next) {
     });
 });
 
-router.get('/distortion/create', function (req, res, next) {
-  Distortion.insertOne(title, description, image, release_date, image, finder)
-  // .then(function (Distortion) {
+router.get('/distortion/create', function (req, res) {
   res.render('distortion/create', {
-    yes: 'Création',
+    distortion: Distortion
+  });
+});
+
+router.get('/distortion/edit/:id', function (req, res, next) {
+  Distortion.findByPk(req.params.id)
+    .then(function (Distortion) {
+      res.render('distortion/edit', {
+        distortion: Distortion
+      });
+    });
+});
+
+router.post('/distortion/update/:id', function(req, res) {
+  Distortion.update({
     title: req.body.title,
     description: req.body.description,
     release_date: req.body.release_date,
     image: req.body.image,
-    finder: req.body.finder,
+    finder: req.body.finder
+  },
+  {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function (distortions) {
+    res.redirect('/distortion/show/' + req.params.id);
   });
-  // });
-});
+})
 
 router.get('/distortion/delete/:id', function (req, res) {
   Distortion.destroy({
@@ -38,6 +57,7 @@ router.get('/distortion/delete/:id', function (req, res) {
       res.redirect('/');
     });
 });
+
 /* API PART */
 
 router.get('/api/distortion/show/', function (req, res) {
@@ -52,7 +72,7 @@ router.get('/api/distortion/show/:id', function (req, res) {
     .catch(err => res.json(err));
 });
 
-router.post('/api/distortion/create', bodyParser, function (req, res) {
+router.post('/api/distortion/create', function (req, res) {
   Distortion.create({
       title: req.body.title,
       description: req.body.description,
@@ -64,7 +84,7 @@ router.post('/api/distortion/create', bodyParser, function (req, res) {
     .catch(err => res.json(err));
 })
 
-router.put('/api/distortion/update/:id', bodyParser, function (req, res) {
+router.put('/api/distortion/update/:id', function (req, res) {
   Distortion.update({
       title: req.body.title,
       description: req.body.description,

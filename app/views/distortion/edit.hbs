@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Création d'une distortion</title>
+    <title>Modifier une distortion</title>
     <link type="text/css" rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
@@ -22,27 +22,29 @@
       </div>
     </nav>
   </header>
+  {{#distortion}}
     <div class="container mt-3">
         <h1 class="text-center text-uppercase">Création d'une distortion</h1>
-        <form action="distortion/create" method="POST">
+        <form action="/distortion/update/{{id}}" method="POST">
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Entrez un titre" name="title">
+                <input class="form-control" type="text" placeholder="Entrez un titre" value="{{title}}" name="title">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Décrivez la déformation" name="description">
+                <input class="form-control" type="text" placeholder="Décrivez la déformation" value="{{description}}" name="description">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Date de découverte (année)" name="release_date">
+                <input class="form-control" type="number" placeholder="Date de découverte (année)" value="{{release_date}}" name="release_date">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Image" name="image">
+                <input class="form-control" type="url" placeholder="Image" value="{{image}}" name="image">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Auteur de la découverte" name="finder">
+                <input class="form-control" type="text" placeholder="Auteur de la découverte" value="{{finder}}" name="finder">
             </div>
-            <button class="btn btn-success" type="submit">Valider</button>
+            <button class="btn btn-success" type="submit">Modifier</button>
         </form>
     </div>
+    {{/distortion}}
 </body>
 
 </html>
