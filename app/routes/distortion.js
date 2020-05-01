@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser').json();
 const Distortion = require('../models').Distortion
 
 /* GUI PART */
@@ -17,6 +16,19 @@ router.get('/distortion/show/:id', function (req, res) {
 router.get('/distortion/create', function (req, res) {
   res.render('distortion/create', {
     distortion: Distortion
+  });
+});
+
+router.post('/distortion/create', function (req, res) {
+  Distortion.create({
+    title: req.body.title,
+    description: req.body.description,
+    release_date: req.body.release_date,
+    image: req.body.image,
+    finder: req.body.finder
+  })
+  .then(function (distortions) {
+    res.redirect('/');
   });
 });
 

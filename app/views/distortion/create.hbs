@@ -24,7 +24,7 @@
   </header>
     <div class="container mt-3">
         <h1 class="text-center text-uppercase">Création d'une distortion</h1>
-        <form action="distortion/create" method="POST">
+        <form action="/distortion/create" method="POST">
             <div class="form-group">
                 <input class="form-control" type="text" placeholder="Entrez un titre" name="title">
             </div>
@@ -32,10 +32,10 @@
                 <input class="form-control" type="text" placeholder="Décrivez la déformation" name="description">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Date de découverte (année)" name="release_date">
+                <input class="form-control" type="number" placeholder="Date de découverte (année)" name="release_date">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Image" name="image">
+                <input class="form-control" type="url" placeholder="Image" name="image">
             </div>
             <div class="form-group">
                 <input class="form-control" type="text" placeholder="Auteur de la découverte" name="finder">
