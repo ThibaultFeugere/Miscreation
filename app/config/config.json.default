@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "root",
-    "password": "sys",
+    "username": "",
+    "password": "",
     "database": "miscreation",
     "host": "127.0.0.1",
     "dialect": "mariadb",
@@ -10,16 +10,16 @@
     }
   },
   "test": {
-    "username": "root",
-    "password": "sys",
+    "username": "",
+    "password": "",
     "database": "miscreation",
     "host": "127.0.0.1",
     "dialect": "mariadb",
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": "sys",
+    "username": "",
+    "password": "",
     "database": "miscreation",
     "host": "127.0.0.1",
     "dialect": "mariadb",
