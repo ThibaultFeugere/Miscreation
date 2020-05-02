@@ -3,6 +3,7 @@
 
 ## Sommaire
 [Présentation du projet](#presentation-du-projet)
+
 [Installation](#installation)
 
 ## Présentation du projet
@@ -21,13 +22,17 @@ Grâce à nos route `/api/`, toutes les fonctionnalités sont utilisables comme 
 ## Installation
 
 Tout d'abord, il vous faudra cloner le projet, pour obtenir tous les fichiers nécessaires sur votre machine locale :
+
 `git clone https://gitlab.com/thibaultfeugere/miscreation`
 
 Vous pouvez désormais accèder à la racine du projet :
+
 `cd miscreation/app/`
 
 Commencez par générer le fichier `config.json` :
+
 `cp config/config.json.default config/config.json`
+
 Puis modifier les lignes correspondantes afin de configurer la connexion à votre base de données :
 
 ```
@@ -39,25 +44,31 @@ Puis modifier les lignes correspondantes afin de configurer la connexion à votr
 ```
 
 Désormais, installez les paquets requis :
+
 `npm install`
 
 Vous pouvez maintenant créer la base de données :
+
 `npx sequelize-cli db:create`
 
 *Si le dialect défini dans votre `config.json` est `mariadb` il vous faudra la créer à la main, par exemple dans votre interface PhpMyAdmin*
 
 Créez les tables de la base de données :
+
 `npx sequelize-cli db:migrate`
 
 Puis insérez les données :
+
 `npx sequelize-cli db:seed:all`
 
 Tout est prêt pour découvrir l'application !
 
 Lancez le serveur :
+
 `node app.js`
 
 Dans votre moteur de recherche, accédez à l'adresse :
+
 `http://localhost:1337`
 
 #### Bonne visite :)
