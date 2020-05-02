@@ -77,7 +77,7 @@ router.get('/user/delete/:id', function (req, res) {
 
 /* API PART */
 
-router.get('/api/user/show/', function (req, res) {
+router.get('/api/users/', function (req, res) {
   User.findAll()
     .then((result) => res.json(result))
     .catch(err => res.json(err));
