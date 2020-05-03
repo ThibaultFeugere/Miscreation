@@ -77,24 +77,45 @@ router.get('/user/delete/:id', function (req, res) {
 
 /* API PART */
 
-router.get('/api/users/', function (req, res) {
-  User.findAll({
-    attributes: {
-        exclude: ['password']
+router.get('/api/:api_key/users/', function (req, res) {
+  User.count({
+    where: {
+      api_key: req.params.api_key
     }
-  })
-    .then((result) => res.json(result))
-    .catch(err => res.json(err));
+  }).then(count => {
+      if (count > 0) {
+        User.findAll({
+          attributes: {
+            exclude: ['api_key'],  
+            exclude: ['password']
+          }
+        })
+          .then((result) => res.json(result))
+          .catch(err => res.json(err));
+      } else {
+        return res.json("ERROR")
+      }
+  });
 });
 
-router.get('/api/user/show/:id', function (req, res) {
-  User.findByPk(req.params.id, {
-    attributes: {
-        exclude: ['password']
+router.get('/api/:api_key/user/show/:id', function (req, res) {
+  User.count({
+    where: {
+      api_key: req.params.api_key
     }
-  })
-    .then((result) => res.json(result))
-    .catch(err => res.json(err))
+  }).then(count => {
+      if (count > 0) {
+        User.findByPk(req.params.id, {
+          attributes: {
+              exclude: ['password']
+          }
+        })
+          .then((result) => res.json(result))
+          .catch(err => res.json(err))
+      } else {
+        return res.json("ERROR")
+      }
+  });
 })
 
 router.post('/api/user/create', function (req, res) {
