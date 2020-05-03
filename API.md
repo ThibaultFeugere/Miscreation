@@ -41,9 +41,9 @@ Exemple de résultat :
 ### GET - Show one
 
 Pour accéder à une déformation précise, il suffit de rajouter l'ID de la déformation derrière `/show/` ce qui donne donc la commande :
-`http://localhost:1337/api/distortion/show/1`
+`http://localhost:1337/api/distortion/show/:id`
 
-Exemple de résultat : 
+Exemple de résultat avec l'ID 1 : ``http://localhost:1337/api/distortion/show/1``
 
 ```json
 {
@@ -73,4 +73,30 @@ Si vous utilisez Postman, sélectionnez la méthode POST puis dans body, renseig
 
 Si tous les champs sont renseignés, vous aurez comme résultat la déformation que vous venez d'ajouter en JSON, sinon vous aurez un message : ERROR.
 
+### PUT - Update
 
+Vous pouvez update une déformation avec pour méthode PUT et la commande : 
+`http://localhost:1337/api/distortion/update/:ID`
+
+Renseignez de nouveau les clés :
+
+- title (text)
+- description (text)
+- release_date (integer)
+- image (url)
+- finder (text)
+
+Si tout se passe mal, vous recevrez comme message ERROR, si tout se passe bien voilà le résultat :
+
+```json
+[
+    1
+]
+```
+
+### DELETE - Delete
+
+Vous pouvez supprimer une malformation avec la commande :
+`http://localhost:1337/api/distortion/delete/:ID`
+
+Si la suppression a eu lieu, vous recevez 1 (True) sinon si la suppression n'a pas eu lieu, vous recevez 0 (False).
