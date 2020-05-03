@@ -110,3 +110,46 @@ Si la suppression a eu lieu, vous recevez 1 (True) sinon si la suppression n'a p
 ## User
 
 La partie User dispose elle aussi d'une API.
+
+### GET - All users
+
+Pour accéder à la liste des tous les utilisateurs, il suffit d'effectuer la commande :
+`http://localhost:1337/api/users`
+
+Exemple de résultat :
+
+```json
+[
+    {
+        "id": 1,
+        "name": "Maxime",
+        "email": "maxime.larrieu@ynov.com",
+        "createdAt": "2020-05-01T14:06:27.000Z",
+        "updatedAt": "2020-05-01T14:06:27.000Z"
+    },
+    {
+        "id": 2,
+        "name": "Thibault",
+        "email": "thibault.feugere@ynov.com",
+        "createdAt": "2020-05-01T14:06:27.000Z",
+        "updatedAt": "2020-05-01T14:06:27.000Z"
+    }
+]
+```
+
+### GET - One user
+
+Vous pouvez obtenir les information d'un utilisateur précis à l'aide de son ID avec la commande :
+`http://localhost:1337/api/user/show/:ID`
+
+Exemple de résultat avec la commande : `http://localhost:1337/api/user/show/1`
+
+```json
+{
+    "id": 1,
+    "name": "Maxime",
+    "email": "maxime.larrieu@ynov.com",
+    "createdAt": "2020-05-01T14:06:27.000Z",
+    "updatedAt": "2020-05-01T14:06:27.000Z"
+}
+```
