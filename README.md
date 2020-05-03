@@ -6,6 +6,8 @@
 
 [Installation](#installation)
 
+[Documentation API](#documentation-api)
+
 ## Présentation du projet
 
 Miscreation est une application recensant les malformations physiques les plus rares.
@@ -72,3 +74,7 @@ Dans votre moteur de recherche, accédez à l'adresse :
 `http://localhost:1337`
 
 #### Bonne visite :)
+
+## Documentation API
+
+Nous avons écrit la documentation dans le fichier (API.md)[/API.md].
