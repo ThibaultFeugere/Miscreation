@@ -4,8 +4,8 @@ Notre API RESTful est relativement simple à comprendre mais voici quelques dét
 
 ## Sommaire
 
-- [Distortion](#Distortion)
-- [User](#User)
+- [Distortion](#distortion)
+- [User](#user)
 
 ## Distortion
 
