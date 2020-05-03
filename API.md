@@ -2,6 +2,11 @@
 
 Notre API RESTful est relativement simple à comprendre mais voici quelques détails. Nous allons vous montrer les possibilités ainsi que des exemples de résultat.
 
+## Sommaire
+
+- [Distortion](#Distortion)
+- [User](#User)
+
 ## Distortion
 
 La partie Distortion concerne les déformations ajoutées sur le base de données.
@@ -100,3 +105,8 @@ Vous pouvez supprimer une malformation avec la commande :
 `http://localhost:1337/api/distortion/delete/:ID`
 
 Si la suppression a eu lieu, vous recevez 1 (True) sinon si la suppression n'a pas eu lieu, vous recevez 0 (False).
+
+
+## User
+
+La partie User dispose elle aussi d'une API.
