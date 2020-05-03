@@ -77,4 +77,4 @@ Dans votre moteur de recherche, accédez à l'adresse :
 
 ## Documentation API
 
-Nous avons écrit la documentation dans le fichier (API.md)[/API.md].
+Nous avons écrit la documentation dans le fichier [API.md](./API.md).
