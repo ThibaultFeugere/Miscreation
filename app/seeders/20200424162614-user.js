@@ -5,6 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [{
       name: 'Maxime',
       email: 'maxime.larrieu@ynov.com',
+      api_key: (Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)),
       password: 'tki',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -12,6 +13,7 @@ module.exports = {
     {
       name: 'Thibault',
       email: 'thibault.feugere@ynov.com',
+      api_key: (Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)),
       password: 'motdepasse',
       createdAt: new Date(),
       updatedAt: new Date()

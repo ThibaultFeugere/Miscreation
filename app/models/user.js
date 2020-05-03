@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: true
       }
     },
+    api_key: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false

@@ -28,7 +28,12 @@
         {{#user}}
         <h1 class="text-center text-uppercase">{{ name }}</h1>
         <div class="alert alert-info text-center">
-            <a href="/user/delete/{{id}}" style="text-decoration: inherit; color: inherit; float:right">
+            <small>
+                <p><i>{{ email }}</i></p>
+            </small>
+            <p>Clé API : <b>{{api_key}}</b></p>
+        </div>
+        <a href="/user/delete/{{id}}" style="text-decoration: inherit; color: inherit; float:right">
                 <button type="button" class="btn btn-danger text-right">
                     <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -51,10 +56,6 @@
                     </svg>
                 </button>
             </a>
-            <small>
-                <p><i>{{ email }}</i></p>
-            </small>
-        </div>
         {{/user}}
     </div>
 </body>

@@ -78,13 +78,21 @@ router.get('/user/delete/:id', function (req, res) {
 /* API PART */
 
 router.get('/api/users/', function (req, res) {
-  User.findAll()
+  User.findAll({
+    attributes: {
+        exclude: ['password']
+    }
+  })
     .then((result) => res.json(result))
     .catch(err => res.json(err));
 });
 
 router.get('/api/user/show/:id', function (req, res) {
-  User.findByPk(req.params.id)
+  User.findByPk(req.params.id, {
+    attributes: {
+        exclude: ['password']
+    }
+  })
     .then((result) => res.json(result))
     .catch(err => res.json(err))
 })
