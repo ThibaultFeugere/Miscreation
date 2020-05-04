@@ -107,6 +107,7 @@ router.get('/api/:api_key/user/show/:id', function (req, res) {
       if (count > 0) {
         User.findByPk(req.params.id, {
           attributes: {
+              exclude: ['api_key'], 
               exclude: ['password']
           }
         })
