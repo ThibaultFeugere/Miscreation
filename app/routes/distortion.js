@@ -7,7 +7,6 @@ const iHave = require('../models').i_Have
 router.post('/ihave/distortion/:id', function (req, res) {
   i_Have.create({
     distortionId: Distortion.findByPk(req.params.id),
-    userId:
   })
 })
 
