@@ -9,11 +9,11 @@ Notre API RESTful est relativement simple à comprendre mais voici quelques dét
 
 ## Distortion
 
-La partie Distortion concerne les déformations ajoutées sur le base de données.
+La partie Distortion concerne les malformations ajoutées sur le base de données.
 
 ### GET - Show all
 
-Pour accéder à toutes les déformations, vous pouvez effectuer cette commande :
+Pour accéder à toutes les malformations, vous pouvez effectuer cette commande :
 `http://localhost:1337/api/distortion/show`
 
 Exemple de résultat :
@@ -45,7 +45,7 @@ Exemple de résultat :
 
 ### GET - Show one
 
-Pour accéder à une déformation précise, il suffit de rajouter l'ID de la déformation derrière `/show/` ce qui donne donc la commande :
+Pour accéder à une malformation précise, il suffit de rajouter l'ID de la malformation derrière `/show/` ce qui donne donc la commande :
 `http://localhost:1337/api/distortion/show/:id`
 
 Exemple de résultat avec l'ID 1 : ``http://localhost:1337/api/distortion/show/1``
@@ -65,7 +65,7 @@ Exemple de résultat avec l'ID 1 : ``http://localhost:1337/api/distortion/show/1
 
 ### POST - Create
 
-A l'aide de l'API, vous pouvez créer une déformation à l'aide de la commande : 
+A l'aide de l'API, vous pouvez créer une malformation à l'aide de la commande : 
 `http://localhost:1337/api/distortion/create`
 
 Si vous utilisez Postman, sélectionnez la méthode POST puis dans body, renseignez les clés :
@@ -76,11 +76,11 @@ Si vous utilisez Postman, sélectionnez la méthode POST puis dans body, renseig
 - image (url)
 - finder (text)
 
-Si tous les champs sont renseignés, vous aurez comme résultat la déformation que vous venez d'ajouter en JSON, sinon vous aurez un message : ERROR.
+Si tous les champs sont renseignés, vous aurez comme résultat la malformation que vous venez d'ajouter en JSON, sinon vous aurez un message : ERROR.
 
 ### PUT - Update
 
-Vous pouvez update une déformation avec pour méthode PUT et la commande : 
+Vous pouvez update une malformation avec pour méthode PUT et la commande : 
 `http://localhost:1337/api/distortion/update/:ID`
 
 Renseignez de nouveau les clés :
