@@ -1,8 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const Distortion = require('../models').Distortion
-
+const iHave = require('../models').i_Have
 /* GUI PART */
+
+router.post('/ihave/distortion/:id', function (req, res) {
+  i_Have.create({
+    distortionId: Distortion.findByPk(req.params.id),
+    userId:
+  })
+})
 
 router.get('/distortion/show/:id', function (req, res) {
   Distortion.findByPk(req.params.id)
@@ -86,14 +93,14 @@ router.get('/api/distortion/show/:id', function (req, res) {
 router.post('/api/distortion/create', function (req, res) {
   if (typeof req.body.title !== 'undefined' && typeof req.body.description !== 'undefined' && typeof req.body.release_date !== 'undefined' && typeof req.body.image !== 'undefined' && typeof req.body.finder !== 'undefined') {
     Distortion.create({
-      title: req.body.title,
-      description: req.body.description,
-      release_date: req.body.release_date,
-      image: req.body.image,
-      finder: req.body.finder
-    })
-    .then((result) => res.json(result))
-    .catch(err => res.json(err));
+        title: req.body.title,
+        description: req.body.description,
+        release_date: req.body.release_date,
+        image: req.body.image,
+        finder: req.body.finder
+      })
+      .then((result) => res.json(result))
+      .catch(err => res.json(err));
   } else {
     res.json("ERROR")
   }
@@ -101,19 +108,19 @@ router.post('/api/distortion/create', function (req, res) {
 
 router.put('/api/distortion/update/:id', function (req, res) {
   if (typeof req.body.title !== 'undefined' && typeof req.body.description !== 'undefined' && typeof req.body.release_date !== 'undefined' && typeof req.body.image !== 'undefined' && typeof req.body.finder !== 'undefined') {
-  Distortion.update({
-      title: req.body.title,
-      description: req.body.description,
-      release_date: req.body.release_date,
-      image: req.body.image,
-      finder: req.body.finder
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
-    .then((result) => res.json(result))
-    .catch(err => res.json(err));
+    Distortion.update({
+        title: req.body.title,
+        description: req.body.description,
+        release_date: req.body.release_date,
+        image: req.body.image,
+        finder: req.body.finder
+      }, {
+        where: {
+          id: req.params.id
+        }
+      })
+      .then((result) => res.json(result))
+      .catch(err => res.json(err));
   } else {
     res.json("ERROR")
   }
