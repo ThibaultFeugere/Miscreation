@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Distortion.associate = function (models) {
     // associations can be defined here
-    Distortion.hasMany(models.i_Have);
-    Distortion.hasMany(models.User);
+    // Distortion.hasMany(models.i_Have);
+    // Distortion.hasMany(models.User);
   };
   return Distortion;
 };
