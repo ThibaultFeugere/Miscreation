@@ -137,7 +137,7 @@ Exemple de résultat :
 ]
 ```
 
-### GET - One user
+### GET - Show one
 
 Vous pouvez obtenir les information d'un utilisateur précis à l'aide de son ID avec la commande :
 `http://localhost:1337/api/user/show/:ID`
@@ -153,3 +153,56 @@ Exemple de résultat avec la commande : `http://localhost:1337/api/user/show/1`
     "updatedAt": "2020-05-01T14:06:27.000Z"
 }
 ```
+
+### POST - Create
+
+A l'aide de l'API, vous pouvez créer un nouvel utilisateur grâce à la commande : 
+`http://localhost:1337/api/user/create`
+
+Si vous utilisez Postman, sélectionnez la méthode POST puis dans body, renseignez les clés :
+
+- name (text)
+- email (text)
+- password (text)
+
+Si tous les champs sont renseignés, vous aurez comme résultat l'utilisateur que vous venez d'ajouter en JSON, sinon vous aurez un message : ERROR.
+
+### PUT - Update
+
+Vous pouvez update un user avec la méthode PUT et la commande : 
+`http://localhost:1337/api/user/update/:ID`
+
+Renseignez de nouveau les clés :
+
+- name (text)
+- email (text)
+- password (text)
+
+Si tout se passe mal, vous recevrez comme message ERROR, si tout se passe bien voilà le résultat :
+
+```json
+[
+    1
+]
+```
+
+### DELETE - Delete
+
+Vous pouvez supprimer un utilisateur avec la commande :
+`http://localhost:1337/api/user/delete/:ID`
+
+Si la suppression a eu lieu, vous recevez 1 (True) sinon si la suppression n'a pas eu lieu, vous recevez 0 (False).
+
+### GET - ApiKey
+
+A l'inscription, un utilisateur se voit assigné une clé API, il est alors possible de la vérifier en utilisant la commande :
+`http://localhost:1337/:your_api_key/user/show/:your_id`
+
+S'il y a correspondance, vous récupérez les données de votre compte au format JSON.
+
+### GET users from ApiKey
+
+Un utilisateur inscrit, qui possède donc sa clé API peut, grâce à cette dernière voir les informations de tous les comptes utilisateurs :
+`http://localhost:1337/:your_api_key/users`
+
+On récupère alors, au format JSON, la liste et les informations des utilisateurs inscris.
