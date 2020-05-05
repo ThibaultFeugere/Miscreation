@@ -9,7 +9,7 @@ Notre API RESTful est relativement simple à comprendre mais voici quelques dét
 
 ## Distortion
 
-La partie Distortion concerne les malformations ajoutées sur le base de données.
+La partie Distortion concerne les malformations ajoutées sur la base de données.
 
 ### GET - Show all
 
