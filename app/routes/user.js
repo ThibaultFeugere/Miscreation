@@ -33,6 +33,7 @@ router.post('/user/create', function (req, res) {
   User.create({
       name: req.body.name,
       email: req.body.email,
+      api_key: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
       password: req.body.password
     })
     .then(function (users) {
@@ -86,8 +87,10 @@ router.get('/api/:api_key/users/', function (req, res) {
       if (count > 0) {
         User.findAll({
           attributes: {
-            exclude: ['api_key'],  
-            exclude: ['password']
+            exclude: [
+              'api_key',
+              'password'
+            ]
           }
         })
           .then((result) => res.json(result))
@@ -107,8 +110,10 @@ router.get('/api/:api_key/user/show/:id', function (req, res) {
       if (count > 0) {
         User.findByPk(req.params.id, {
           attributes: {
-              exclude: ['api_key'], 
-              exclude: ['password']
+            exclude: [
+              'api_key',
+              'password'
+            ]
           }
         })
           .then((result) => res.json(result))

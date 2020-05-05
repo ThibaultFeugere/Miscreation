@@ -30,7 +30,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: "L'épidermodysplasie verruciforme",
+        title: "L'épidermodysplasie",
         description: "Cette maladie génétique très rare est due à une sensibilité accrue des tissus cutanés au papillomavirus. La personne qui en souffre voit se développer des macules squameuses et des papules, essentiellement au niveau des mains et des pieds, qui peuvent évoluer de manière très impressionnante. Ces verrues prennent l'aspect d'écorce, c'est pourquoi cette maladie est aussi appelée la maladie de l'homme-arbre. Les troubles apparaissent généralement à l'adolescence.",
         release_date: 1916,
         image: 'https://resize.prod.docfr.doc-media.fr/r/1010,,forcex/img/var/doctissimo/storage/images/fr/www/sante/diaporamas/maladies-deforment-corps/epidermodysplasie-verruciforme/3096020-1-fre-FR/L-epidermodysplasie-verruciforme.jpg',
