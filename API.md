@@ -193,16 +193,3 @@ Vous pouvez supprimer un utilisateur avec la commande :
 
 Si la suppression a eu lieu, vous recevez 1 (True) sinon si la suppression n'a pas eu lieu, vous recevez 0 (False).
 
-### GET - ApiKey
-
-A l'inscription, un utilisateur se voit assigné une clé API, il est alors possible de la vérifier en utilisant la commande :
-`http://localhost:1337/:your_api_key/user/show/:your_id`
-
-S'il y a correspondance, vous récupérez les données de votre compte au format JSON.
-
-### GET users from ApiKey
-
-Un utilisateur inscrit, qui possède donc sa clé API peut, grâce à cette dernière voir les informations de tous les comptes utilisateurs :
-`http://localhost:1337/:your_api_key/users`
-
-On récupère alors, au format JSON, la liste et les informations des utilisateurs inscris.
