@@ -12,7 +12,7 @@
 
 Miscreation est une application recensant les malformations physiques les plus rares.
 
-Sous la forme d'une interface, l'utilisateur pourra découvrir l'ensemble des malformations enregistrées dans notre bases de données et accéder aux détails de celles-ci.
+Sous la forme d'une interface, l'utilisateur pourra découvrir l'ensemble des malformations enregistrées dans notre base de données et accéder aux détails de celle-ci.
 
 Par conséquent, il est possible d'ajouter une malformation, mais aussi d'en modifier les données ou même d'en supprimer.
 
