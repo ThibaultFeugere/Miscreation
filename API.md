@@ -114,7 +114,7 @@ La partie User dispose elle aussi d'une API.
 ### GET - All users
 
 Pour accéder à la liste des tous les utilisateurs, il suffit d'effectuer la commande :
-`http://localhost:1337/api/users`
+`http://localhost:1337/api/:api_key/users`
 
 Exemple de résultat :
 
@@ -140,9 +140,9 @@ Exemple de résultat :
 ### GET - Show one
 
 Vous pouvez obtenir les information d'un utilisateur précis à l'aide de son ID avec la commande :
-`http://localhost:1337/api/user/show/:ID`
+`http://localhost:1337/api/:api_key/user/show/:ID`
 
-Exemple de résultat avec la commande : `http://localhost:1337/api/user/show/1`
+Exemple de résultat avec la commande : `http://localhost:1337/api/w2rq40ovb6oyqnilacm03i/user/show/1`
 
 ```json
 {
